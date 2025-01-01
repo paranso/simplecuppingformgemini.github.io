@@ -18,13 +18,35 @@ body {
     margin-bottom: 10px;
 }
 .options {
-    display: flex; /* 가로로 나열 */
+    display: flex;
     flex-wrap: wrap; /* 넘치면 다음 줄로 */
+    gap: 10px; /* 항목 간 간격 설정 */
 }
 .options label {
+    display: flex; /* 레이블 내부를 flexbox로 설정 */
+    align-items: center; /* 세로 가운데 정렬 */
     margin-right: 10px;
-    margin-bottom: 5px; /* 줄 바꿈 시 간격 조정 */
+    margin-bottom: 5px;
 }
-#result-display {
+.options input[type="checkbox"],
+.options input[type="radio"] {
+    margin-right: 5px; /* 체크박스와 텍스트 간 간격 */
+}
+#aroma-text,
+#taste-text,
+#feel-text {
+    width: calc(100% - 10px); /* 텍스트 입력 필드 너비 조정 */
+    padding: 5px;
+    box-sizing: border-box; /* padding, border를 포함한 너비 계산 */
+}
+#feel-text {
+    height: 100px; /* 기타 느낌 입력 박스 높이 조정 */
+    resize: vertical; /* 세로 크기 조절 가능 */
+}
+#result-area {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-x: auto; /* 내용이 넘칠 경우 가로 스크롤 */
     white-space: pre-wrap; /* 긴 텍스트 줄바꿈 처리 */
 }
